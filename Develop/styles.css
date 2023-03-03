@@ -3,7 +3,7 @@
 body {
     align-items: center;
     background: #222;
-    background-image: url('https://source.unsplash.com/2000x1000/?weather');
+    /* background-image: url('https://source.unsplash.com/2200x1000/'); */
     font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: center;
@@ -12,41 +12,47 @@ body {
 }
 
 .card {
-    background: #000000d0;
+    background: #202020d0;
     border-radius: 20px;
     color: white;
-    height: 600px;
-    max-width: 800px;
+    height: 800px;
+    max-width: 1000px;
     margin: 20px;
     padding: 30px;
     width: 100%;
 }
 
+/* @media (max-width: 768px){
+    .card {
+        margin-bottom: 1000px;
+    }
+} */
+
 .search {
     align-items: center;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
-button {
-    background: #7c7c7c2b;
+.search-button {
+    background: #1d1d1dfa;
     border: none;
     border-radius: 50%;
     color: white;
-    cursor: pointer;
     margin: 10px;
     height: 40px;
     outline: none;
-    transition: 0.2s ease-in-out;
+    transition: 0.3s ease-in-out;
     width: 40px;
 }
 
-button:hover {
+.search-button:hover {
     background: #7c7c7c6b;
 }
 
-input.search-bar {
-    background: #7c7c7c2b;
+.search-bar {
+    background: #1d1d1dd5;
     border: none;
     border-radius: 20px;
     color: white;
@@ -57,6 +63,108 @@ input.search-bar {
     width: calc(100% - 100px);
 }
 
-h1.temp {
-    margin: 0;
+
+
+.flex {
+    align-items: center;
+    display: flex;
 }
+
+.descritpion {
+    text-transform: uppercase;
+}
+
+.temp {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.weather {
+    
+    margin: 50px 0 0px 20px;
+}
+
+.weather.loading {
+    max-height: 20px;
+    visibility: hidden;
+    position: relative;
+}
+
+.weather.loading:after {
+    color: white;
+    content: 'Loading...';
+    visibility: visible;
+    position: absolute;
+    top: 0;
+}
+
+h2 {
+    margin-bottom: 30px;
+    text-decoration: underline;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.fiveDay {
+    
+    display: flex;
+    font-size: 0.8rem;
+    justify-content: center;
+    margin-bottom: 30px;
+    text-align: center;
+    width: 100%;
+}
+
+.col {
+    background: #1d1d1dd5;
+    border-radius: 20px;
+    margin: 10px;
+    text-decoration: none !important;
+    padding: 10px 10px 0 10px;
+}
+
+.history {
+    display: grid;
+    margin-top: 10px;
+    margin-right: 10px;
+    position: absolute;
+    right: 100px;
+    top: 150px;
+}
+
+@media (max-width: 768px) {
+    .history {
+    margin-top: 20px;
+    position: static;
+    }
+}
+
+.city-history {
+    background: #1d1d1dd5;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    margin: 1px;
+    text-align: center;
+    width: 200px;
+}
+
+.city-history:hover {
+    cursor: pointer;
+}
+
+.history-btn{
+    background: #1d1d1dd5;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.history-btn:hover {
+    background: #7c7c7c6b;
+    transition: 0.3s ease-in-out;
+}
+
