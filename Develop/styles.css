@@ -1,9 +1,6 @@
-
-
 body {
     align-items: center;
     background: #222;
-    /* background-image: url('https://source.unsplash.com/2200x1000/'); */
     font-family: 'Open Sans', sans-serif;
     display: flex;
     justify-content: center;
@@ -11,23 +8,18 @@ body {
     margin: 0;
 }
 
+/* setting up main container styling and propperties */
 .card {
     background: #202020d0;
     border-radius: 20px;
     color: white;
     height: 800px;
-    max-width: 1000px;
     margin: 20px;
     padding: 30px;
-    width: 100%;
+    width: auto;
 }
 
-/* @media (max-width: 768px){
-    .card {
-        margin-bottom: 1000px;
-    }
-} */
-
+/* setting up search bar and search button styling and propperties */
 .search {
     align-items: center;
     display: flex;
@@ -43,12 +35,14 @@ body {
     margin: 10px;
     height: 40px;
     outline: none;
-    transition: 0.3s ease-in-out;
+    transition: 0.2s ease-in-out;
     width: 40px;
 }
 
 .search-button:hover {
     background: #7c7c7c6b;
+    transition: 0.1s ease-in-out;
+    
 }
 
 .search-bar {
@@ -63,17 +57,7 @@ body {
     width: calc(100% - 100px);
 }
 
-
-
-.flex {
-    align-items: center;
-    display: flex;
-}
-
-.descritpion {
-    text-transform: uppercase;
-}
-
+/* Setting up the weather section styling and propperties */
 .temp {
     font-size: 2.5rem;
     font-weight: bold;
@@ -81,8 +65,7 @@ body {
     margin-bottom: 20px;
 }
 
-.weather {
-    
+.weather {   
     margin: 50px 0 0px 20px;
 }
 
@@ -100,9 +83,9 @@ body {
     top: 0;
 }
 
+/* setting up the 5 day secition styling and propperties */
 h2 {
     margin-bottom: 30px;
-    text-decoration: underline;
     text-align: center;
     padding: 10px 0;
 }
@@ -121,10 +104,12 @@ h2 {
     background: #1d1d1dd5;
     border-radius: 20px;
     margin: 10px;
-    text-decoration: none !important;
+    text-decoration: none;
     padding: 10px 10px 0 10px;
+    width: 150px;
 }
 
+/* setting up the history section styling and propperties */
 .history {
     display: grid;
     margin-top: 10px;
@@ -136,23 +121,38 @@ h2 {
 
 @media (max-width: 768px) {
     .history {
-    margin-top: 20px;
+    display: grid;   
+    justify-content: center;
+    margin-top: 50px;
     position: static;
     }
 }
 
+@media (max-width: 768px) {
+    .history-btn {
+    display: grid;   
+    justify-content: center;   
+    width: 200px;
+    }
+}
+
+/* styling history textarea and clear button */
 .city-history {
     background: #1d1d1dd5;
     border: none;
     border-radius: 20px;
     color: white;
-    margin: 1px;
+    margin: 2px;
     text-align: center;
     width: 200px;
+    
 }
 
 .city-history:hover {
     cursor: pointer;
+    box-shadow: 0 0.4rem 0.4rem 0 rgba(133, 159, 172, 0.5);
+    transform: translateY(-1px);
+    transition: transform 150ms;
 }
 
 .history-btn{
@@ -160,11 +160,12 @@ h2 {
     border: none;
     border-radius: 20px;
     color: white;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    padding: 5px; 
 }
 
 .history-btn:hover {
     background: #7c7c7c6b;
-    transition: 0.3s ease-in-out;
-}
+    transition: 0.2s ease-in-out;
 
+}

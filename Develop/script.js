@@ -47,7 +47,8 @@ for (var i = 7; i < data.list.length; i += 7) {
     var div = document.createElement('div')
     div.className = ('col')
     var iconUrl = `https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}.png`;
-    div.innerHTML = `<p> ${data.list[i].dt_txt}<p>
+    var date = data.list[i].dt_txt.split(' ')[0];
+        div.innerHTML = `<p> ${date}<p>
     <img src="${iconUrl}" alt="Weather Icon">
     <p> Temperature: ${Math.floor(data.list[i].main.temp)}°C </p>
     <p> Humidity: ${data.list[i].main.humidity}% </p>
@@ -67,11 +68,12 @@ for (var i = 7; i < data.list.length; i += 7) {
 var checkHistory = JSON.parse(localStorage.getItem('search')) || [];
 var historyEl = document.querySelector('.history')
 function searchCity() {
-    var searchItem = searchBar.value;
-    checkHistory.push(searchItem);
-    localStorage.setItem('search', JSON.stringify(checkHistory));
-    showHistory();
-    weather.search();
+  var searchItem = searchBar.value.toLowerCase();
+  searchItem = searchItem.charAt(0).toUpperCase() + searchItem.slice(1);
+  checkHistory.push(searchItem);
+  localStorage.setItem('search', JSON.stringify(checkHistory));
+  showHistory();
+  weather.search();
 }
 
 //keeps the history on screen after page reload
@@ -86,15 +88,17 @@ searchBtn.addEventListener('click', function(){
     var searchItem = searchBar.value;
     checkHistory.push(searchItem);
     showHistory();
-    
-       weather.search(); 
+    weather.search(); 
+    searchBar.value = '';
 });
 
 //setting up the Enter key from keyboard to do the same job as the search button
 var searchBar = document.querySelector('.search-bar');
+
 searchBar.addEventListener('keyup', function(event){
     if(event.key == 'Enter'){
         searchCity();
+        searchBar.value = '';
     }
 });
 
@@ -126,7 +130,7 @@ function showHistory() {
       });
       historyEl.append(historyCity);
     }
-    if (checkHistory.length === 0) {
+    if (checkHistory.length === 0 && historyButton) {
       historyButton.remove();
     }
   }
