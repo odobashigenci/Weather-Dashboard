@@ -16,7 +16,7 @@ N/A
 Enter the city name you prefer and check it's weather in real time. If you are planning to take a vacation trip or any other trip, you can find out a five day weather forecast of the city you're visiting.
 
 
-# Link
+## Link
 
 To view page [click here](https://odobashigenci.github.io/Weather-Dashboard/)
 
@@ -30,7 +30,7 @@ To view page [click here](https://odobashigenci.github.io/Weather-Dashboard/)
 
 Babackground-image made with (https://unsplash.com)
 
-Weather API: Made with (https://openweathermap.org/)
+Weather API made with (https://openweathermap.org/)
 
 
 ## License
