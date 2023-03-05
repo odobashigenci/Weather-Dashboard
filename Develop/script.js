@@ -122,7 +122,6 @@ function showHistory() {
     for (var j = 0; j < checkHistory.length; j++) {
       var historyCity = document.createElement('input');
       historyCity.classList.add('city-history');
-      historyCity.setAttribute('type', 'text');
       historyCity.setAttribute('readonly', true);
       historyCity.setAttribute('value', checkHistory[j]);
       historyCity.addEventListener('click', function() {
