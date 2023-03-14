@@ -28,7 +28,7 @@ To view page [click here](https://odobashigenci.github.io/Weather-Dashboard/)
 
 ## Credits
 
-Babackground-image made with (https://unsplash.com)
+Background-image made with (https://unsplash.com)
 
 Weather API made with (https://openweathermap.org/)
 
